@@ -16,6 +16,8 @@ def translate_word():
     lang = "en"
     if 'lang' in data:
         lang = data.get('lang')
+        if lang is None:
+            lang = "en"
 
     print(f"Word: {word}, Lang: {lang}")
     translated = GoogleTranslator(source='auto', target=lang).translate(word)

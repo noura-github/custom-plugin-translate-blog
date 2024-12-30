@@ -3,17 +3,45 @@
 {% block content %}
     <h1>Welcome to the Home Page</h1>
     <p>This is the home page of the Custom Plugin Tooltip Demo</p>
-    <h1>Company Data</h1>
-    <table id="dataTable">
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Department Name</th>
-                <th>Company Name</th>
-            </tr>
-        </thead>
-        <tbody class="containment">
-        </tbody>
-    </table>
+    <div class="container mt-5">
+        <div class="dropdown">
+            <button
+                class="btn btn-primary dropdown-toggle"
+                type="button"
+                id="languageDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Select Language
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <!-- Language options -->
+                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="es">Spanish</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="fr">French</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="de">German</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="zh-CN">Chinese (Simplified)</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ja">Japanese</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ar">Arabic</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="ru">Russian</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="it">Italian</a></li>
+                <li><a class="dropdown-item" href="#" data-lang="pt">Portuguese</a></li>
+            </ul>
+        </div>
+
+        <div class="mt-3">
+            <p>Selected Language Code: <span id="selectedLanguage">None</span></p>
+        </div>
+    </div>
+
+    <div class="tooltip" id="tooltip_container"></div>
+    <h1>Python Overview (Wikipedia)</h1>
+    <p id="texts_container">Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.[33]
+
+Python is dynamically type-checked and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming. It is often described as a "batteries included" language due to its comprehensive standard library.[34][35]
+
+Guido van Rossum began working on Python in the late 1980s as a successor to the ABC programming language and first released it in 1991 as Python 0.9.0.[36] Python 2.0 was released in 2000. Python 3.0, released in 2008, was a major revision not completely backward-compatible with earlier versions. Python 2.7.18, released in 2020, was the last release of Python 2.[37]
+
+Python consistently ranks as one of the most popular programming languages,
+        and has gained widespread use in the machine learning community.
+    </p>
 {% endblock %}

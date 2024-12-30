@@ -1,0 +1,8 @@
+(function($) {
+  $.fn.myPlugin = function(options) {
+    this.css('background-color', options.color);
+    this.css('border', options.border);
+    this.css('font-size', options.fontSize);
+    return this;
+  };
+})(jQuery);
