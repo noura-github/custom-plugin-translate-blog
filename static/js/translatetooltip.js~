@@ -18,12 +18,15 @@
                 that.setLanguage();
 
                 const cacheKey = `${that.tooltipContent}_${that.lang}`;
-                let cv = that.cache[cacheKey];
-                if (cv) {
+                let cd = that.cache[cacheKey];
+                //console.log("cd: ", cd);
+                if (cd) {
+                    console.log("get from the cache # cd: ", cd);
                     // Use the cached translation
                     that.tooltipContent = that.cache[cacheKey];
                     that.showTranslation();
                 } else {
+                    console.log("get from the db # cd: ", cd);
                     that.wordTranslate()
                     .then(function (data) {
                         // Handle the successful translation
@@ -37,7 +40,9 @@
                         console.error("Error occurred: ", error);
                     });
                 }
-            });
+
+
+            })
 
             $(elem).on("mouseleave", function () {
                 // Hide the tooltip with a fade-out effect
